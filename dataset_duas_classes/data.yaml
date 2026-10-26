@@ -1,0 +1,7 @@
+path: C:/tccyolo26/dataset_duas_classes
+train: images/train
+val: images/val
+nc: 2
+names:
+  0: plastic
+  1: organico

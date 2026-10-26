@@ -1,0 +1,9 @@
+path: C:/tccyolo26/teste_independente
+train: images
+val: images
+test: images
+
+nc: 2
+names:
+  0: plastic
+  1: organico

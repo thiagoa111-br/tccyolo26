@@ -1,0 +1,239 @@
+Ultralytics 8.4.163  Python-3.14.4 torch-2.14.0+cpu CPU (Intel Core i7-7600U 2.80GHz)
+[34m[1mengine\trainer: [0magnostic_nms=False, amp=True, angle=1.0, augment=False, auto_augment=randaugment, batch=8, bgr=0.0, box=7.5, cache=False, cfg=None, channels_last=None, classes=None, close_mosaic=10, cls=0.5, cls_pw=0.0, cls_remap=True, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=False, cutmix=0.0, data=C:\tccyolo26\data.yaml, degrees=0.0, deterministic=True, device=cpu, dfl=1.5, dgrad=0.5, dis=6.0, distill_model=None, dlam=1.0, dlog=1.0, dnn=False, dropout=0.0, dynamic=False, embed=None, epochs=50, erasing=0.4, exist_ok=False, fliplr=0.5, flipud=0.0, format=torchscript, fraction=1.0, freeze=None, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, imgsz=640, iou=0.7, keras=False, kobj=1.0, line_width=None, lr0=0.01, lrf=0.01, mask_ratio=4, max_det=300, mixup=0.0, mode=train, model=C:\tccyolo26\yolo26n.pt, momentum=0.937, mosaic=1.0, multi_scale=0.0, name=plastic_organico_yolo26n, nbs=64, nms=None, opset=None, optimize=False, optimizer=auto, overlap_mask=True, patience=100, perspective=0.0, plots=True, pose=12.0, pretrained=True, profile=False, project=C:\tccyolo26\treinos, quantize=None, rect=False, resume=False, retina_masks=False, rle=1.0, save=True, save_conf=False, save_crop=False, save_dir=C:\tccyolo26\treinos\plastic_organico_yolo26n, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.5, seed=42, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=detect, time=None, tracker=tracktrack.yaml, translate=0.1, val=True, verbose=True, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, workers=0, workspace=None
+Overriding model.yaml nc=80 with nc=2
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1       464  ultralytics.nn.modules.conv.Conv             [3, 16, 3, 2]                 
+  1                  -1  1      4672  ultralytics.nn.modules.conv.Conv             [16, 32, 3, 2]                
+  2                  -1  1      6640  ultralytics.nn.modules.block.C3k2            [32, 64, 1, False, 0.25]      
+  3                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]                
+  4                  -1  1     26080  ultralytics.nn.modules.block.C3k2            [64, 128, 1, False, 0.25]     
+  5                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+  6                  -1  1     87040  ultralytics.nn.modules.block.C3k2            [128, 128, 1, True]           
+  7                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]              
+  8                  -1  1    346112  ultralytics.nn.modules.block.C3k2            [256, 256, 1, True]           
+  9                  -1  1    164608  ultralytics.nn.modules.block.SPPF            [256, 256, 5, 3, True]        
+ 10                  -1  1    249728  ultralytics.nn.modules.block.C2PSA           [256, 256, 1]                 
+ 11                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 12             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 13                  -1  1    119808  ultralytics.nn.modules.block.C3k2            [384, 128, 1, True]           
+ 14                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 15             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 16                  -1  1     34304  ultralytics.nn.modules.block.C3k2            [256, 64, 1, True]            
+ 17                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]                
+ 18            [-1, 13]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 19                  -1  1     95232  ultralytics.nn.modules.block.C3k2            [192, 128, 1, True]           
+ 20                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+ 21            [-1, 10]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 22                  -1  1    463104  ultralytics.nn.modules.block.C3k2            [384, 256, 1, True, 0.5, True]
+ 23        [16, 19, 22]  1    241956  ultralytics.nn.modules.head.Detect           [2, 1, True, [64, 128, 256]]  
+YOLO26n summary: 260 layers, 2,504,580 parameters, 2,504,580 gradients, 5.9 GFLOPs
+
+Transferred 606/708 items from pretrained weights
+WARNING [34m[1mtrain: [0mSlow image access detected (ping: 0.20.0 ms, read: 7.811.3 MB/s, size: 71.3 KB). Use local storage instead of remote/mounted storage for better performance. See https://docs.ultralytics.com/guides/model-training-tips
+
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 22 images, 0 backgrounds, 0 corrupt: 1% ──────────── 22/1836 63.2it/s 0.1s<28.7s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 43 images, 0 backgrounds, 0 corrupt: 2% ──────────── 43/1836 105.2it/s 0.2s<17.0s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 67 images, 0 backgrounds, 0 corrupt: 3% ──────────── 67/1836 144.8it/s 0.3s<12.2s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 87 images, 0 backgrounds, 0 corrupt: 4% ╸─────────── 87/1836 158.3it/s 0.4s<11.0s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 111 images, 0 backgrounds, 0 corrupt: 6% ╸─────────── 111/1836 176.9it/s 0.5s<9.8s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 128 images, 0 backgrounds, 0 corrupt: 6% ╸─────────── 128/1836 174.2it/s 0.6s<9.8s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 147 images, 0 backgrounds, 0 corrupt: 8% ╸─────────── 147/1836 178.4it/s 0.7s<9.5s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 167 images, 0 backgrounds, 0 corrupt: 9% ━─────────── 167/1836 183.9it/s 0.8s<9.1s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 189 images, 0 backgrounds, 0 corrupt: 10% ━─────────── 189/1836 193.8it/s 0.9s<8.5s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 213 images, 0 backgrounds, 0 corrupt: 11% ━─────────── 213/1836 203.6it/s 1.0s<8.0s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 235 images, 0 backgrounds, 0 corrupt: 12% ━╸────────── 235/1836 207.2it/s 1.1s<7.7s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 256 images, 0 backgrounds, 0 corrupt: 13% ━╸────────── 256/1836 206.4it/s 1.2s<7.7s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 276 images, 0 backgrounds, 0 corrupt: 15% ━╸────────── 276/1836 203.3it/s 1.3s<7.7s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 299 images, 0 backgrounds, 0 corrupt: 16% ━╸────────── 299/1836 208.9it/s 1.4s<7.4s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 323 images, 0 backgrounds, 0 corrupt: 17% ━━────────── 323/1836 215.9it/s 1.5s<7.0s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 347 images, 0 backgrounds, 0 corrupt: 18% ━━────────── 347/1836 217.2it/s 1.7s<6.9s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 365 images, 0 backgrounds, 0 corrupt: 19% ━━────────── 365/1836 204.5it/s 1.8s<7.2s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 383 images, 0 backgrounds, 0 corrupt: 20% ━━╸───────── 383/1836 195.5it/s 1.9s<7.4s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 404 images, 0 backgrounds, 0 corrupt: 22% ━━╸───────── 404/1836 194.2it/s 2.0s<7.4s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 427 images, 0 backgrounds, 0 corrupt: 23% ━━╸───────── 427/1836 203.1it/s 2.1s<6.9s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 449 images, 0 backgrounds, 0 corrupt: 24% ━━╸───────── 449/1836 206.1it/s 2.2s<6.7s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 473 images, 0 backgrounds, 0 corrupt: 25% ━━━───────── 473/1836 215.6it/s 2.3s<6.3s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 495 images, 0 backgrounds, 0 corrupt: 26% ━━━───────── 495/1836 215.4it/s 2.4s<6.2s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 515 images, 0 backgrounds, 0 corrupt: 28% ━━━───────── 515/1836 209.7it/s 2.5s<6.3s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 535 images, 0 backgrounds, 0 corrupt: 29% ━━━───────── 535/1836 202.7it/s 2.6s<6.4s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 560 images, 0 backgrounds, 0 corrupt: 30% ━━━╸──────── 560/1836 212.4it/s 2.7s<6.0s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 586 images, 1 backgrounds, 0 corrupt: 31% ━━━╸──────── 586/1836 221.6it/s 2.8s<5.6s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 605 images, 1 backgrounds, 0 corrupt: 32% ━━━╸──────── 605/1836 209.0it/s 2.9s<5.9s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 629 images, 1 backgrounds, 0 corrupt: 34% ━━━━──────── 629/1836 213.9it/s 3.0s<5.6s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 656 images, 1 backgrounds, 0 corrupt: 35% ━━━━──────── 656/1836 223.4it/s 3.1s<5.3s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 680 images, 1 backgrounds, 0 corrupt: 37% ━━━━──────── 680/1836 225.7it/s 3.2s<5.1s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 703 images, 1 backgrounds, 0 corrupt: 38% ━━━━╸─────── 703/1836 221.5it/s 3.3s<5.1s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 720 images, 1 backgrounds, 0 corrupt: 39% ━━━━╸─────── 720/1836 206.0it/s 3.4s<5.4s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 743 images, 1 backgrounds, 0 corrupt: 40% ━━━━╸─────── 743/1836 211.4it/s 3.5s<5.2s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 764 images, 1 backgrounds, 0 corrupt: 41% ━━━━╸─────── 764/1836 208.0it/s 3.6s<5.2s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 787 images, 1 backgrounds, 0 corrupt: 42% ━━━━━─────── 787/1836 213.1it/s 3.7s<4.9s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 808 images, 1 backgrounds, 0 corrupt: 44% ━━━━━─────── 808/1836 211.4it/s 3.9s<4.9s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 833 images, 1 backgrounds, 0 corrupt: 45% ━━━━━─────── 833/1836 215.9it/s 4.0s<4.6s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 853 images, 1 backgrounds, 0 corrupt: 46% ━━━━━╸────── 853/1836 209.3it/s 4.1s<4.7s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 876 images, 1 backgrounds, 0 corrupt: 47% ━━━━━╸────── 876/1836 209.8it/s 4.2s<4.6s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 897 images, 1 backgrounds, 0 corrupt: 48% ━━━━━╸────── 897/1836 205.9it/s 4.3s<4.6s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 921 images, 1 backgrounds, 0 corrupt: 50% ━━━━━━────── 921/1836 212.1it/s 4.4s<4.3s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 944 images, 1 backgrounds, 0 corrupt: 51% ━━━━━━────── 944/1836 216.5it/s 4.5s<4.1s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 966 images, 2 backgrounds, 0 corrupt: 52% ━━━━━━────── 966/1836 217.2it/s 4.6s<4.0s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 989 images, 2 backgrounds, 0 corrupt: 53% ━━━━━━────── 989/1836 215.8it/s 4.7s<3.9s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1010 images, 2 backgrounds, 0 corrupt: 55% ━━━━━━╸───── 1010/1836 209.7it/s 4.8s<3.9s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1029 images, 2 backgrounds, 0 corrupt: 56% ━━━━━━╸───── 1029/1836 198.9it/s 4.9s<4.1s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1046 images, 2 backgrounds, 0 corrupt: 56% ━━━━━━╸───── 1046/1836 189.6it/s 5.0s<4.2s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1057 images, 2 backgrounds, 0 corrupt: 57% ━━━━━━╸───── 1057/1836 165.6it/s 5.1s<4.7s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1072 images, 2 backgrounds, 0 corrupt: 58% ━━━━━━━───── 1072/1836 153.0it/s 5.2s<5.0s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1085 images, 2 backgrounds, 0 corrupt: 59% ━━━━━━━───── 1085/1836 145.1it/s 5.3s<5.2s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1100 images, 2 backgrounds, 0 corrupt: 59% ━━━━━━━───── 1100/1836 145.7it/s 5.4s<5.1s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1112 images, 2 backgrounds, 0 corrupt: 60% ━━━━━━━───── 1112/1836 132.9it/s 5.6s<5.4s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1125 images, 2 backgrounds, 0 corrupt: 61% ━━━━━━━───── 1125/1836 127.2it/s 5.7s<5.6s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1134 images, 2 backgrounds, 0 corrupt: 61% ━━━━━━━───── 1134/1836 113.9it/s 5.8s<6.2s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1144 images, 2 backgrounds, 0 corrupt: 62% ━━━━━━━───── 1144/1836 107.8it/s 5.9s<6.4s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1153 images, 2 backgrounds, 0 corrupt: 62% ━━━━━━━╸──── 1153/1836 101.3it/s 6.0s<6.7s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1163 images, 2 backgrounds, 0 corrupt: 63% ━━━━━━━╸──── 1163/1836 96.9it/s 6.1s<6.9s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1174 images, 2 backgrounds, 0 corrupt: 63% ━━━━━━━╸──── 1174/1836 99.0it/s 6.2s<6.7s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1184 images, 2 backgrounds, 0 corrupt: 64% ━━━━━━━╸──── 1184/1836 99.2it/s 6.3s<6.6s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1190 images, 3 backgrounds, 0 corrupt: 64% ━━━━━━━╸──── 1190/1836 83.4it/s 6.4s<7.7s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1199 images, 4 backgrounds, 0 corrupt: 65% ━━━━━━━╸──── 1199/1836 81.3it/s 6.6s<7.8s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1211 images, 4 backgrounds, 0 corrupt: 65% ━━━━━━━╸──── 1211/1836 89.6it/s 6.7s<7.0s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1219 images, 4 backgrounds, 0 corrupt: 66% ━━━━━━━╸──── 1219/1836 86.3it/s 6.8s<7.1s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1230 images, 4 backgrounds, 0 corrupt: 66% ━━━━━━━━──── 1230/1836 92.2it/s 6.9s<6.6s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1241 images, 4 backgrounds, 0 corrupt: 67% ━━━━━━━━──── 1241/1836 97.2it/s 7.0s<6.1s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1251 images, 4 backgrounds, 0 corrupt: 68% ━━━━━━━━──── 1251/1836 96.3it/s 7.1s<6.1s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1261 images, 4 backgrounds, 0 corrupt: 68% ━━━━━━━━──── 1261/1836 92.1it/s 7.2s<6.2s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1268 images, 4 backgrounds, 0 corrupt: 69% ━━━━━━━━──── 1268/1836 76.7it/s 7.4s<7.4s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1279 images, 4 backgrounds, 0 corrupt: 69% ━━━━━━━━──── 1279/1836 86.7it/s 7.5s<6.4s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1289 images, 4 backgrounds, 0 corrupt: 70% ━━━━━━━━──── 1289/1836 89.3it/s 7.6s<6.1s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1296 images, 4 backgrounds, 0 corrupt: 70% ━━━━━━━━──── 1296/1836 74.6it/s 7.8s<7.2s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1305 images, 4 backgrounds, 0 corrupt: 71% ━━━━━━━━╸─── 1305/1836 77.7it/s 7.9s<6.8s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1317 images, 4 backgrounds, 0 corrupt: 71% ━━━━━━━━╸─── 1317/1836 85.4it/s 8.0s<6.1s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1330 images, 4 backgrounds, 0 corrupt: 72% ━━━━━━━━╸─── 1330/1836 94.1it/s 8.1s<5.4s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1344 images, 4 backgrounds, 0 corrupt: 73% ━━━━━━━━╸─── 1344/1836 106.3it/s 8.2s<4.6s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1353 images, 4 backgrounds, 0 corrupt: 73% ━━━━━━━━╸─── 1353/1836 99.5it/s 8.3s<4.9s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1370 images, 4 backgrounds, 0 corrupt: 74% ━━━━━━━━╸─── 1370/1836 115.2it/s 8.4s<4.0s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1382 images, 4 backgrounds, 0 corrupt: 75% ━━━━━━━━━─── 1382/1836 114.3it/s 8.5s<4.0s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1394 images, 4 backgrounds, 0 corrupt: 75% ━━━━━━━━━─── 1394/1836 107.1it/s 8.7s<4.1s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1407 images, 4 backgrounds, 0 corrupt: 76% ━━━━━━━━━─── 1407/1836 113.0it/s 8.8s<3.8s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1420 images, 5 backgrounds, 0 corrupt: 77% ━━━━━━━━━─── 1420/1836 118.1it/s 8.9s<3.5s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1433 images, 5 backgrounds, 0 corrupt: 78% ━━━━━━━━━─── 1433/1836 117.9it/s 9.0s<3.4s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1444 images, 5 backgrounds, 0 corrupt: 78% ━━━━━━━━━─── 1444/1836 112.1it/s 9.1s<3.5s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1453 images, 5 backgrounds, 0 corrupt: 79% ━━━━━━━━━─── 1453/1836 104.3it/s 9.2s<3.7s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1473 images, 5 backgrounds, 0 corrupt: 80% ━━━━━━━━━╸── 1473/1836 127.5it/s 9.3s<2.8s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1487 images, 5 backgrounds, 0 corrupt: 80% ━━━━━━━━━╸── 1487/1836 131.2it/s 9.4s<2.7s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1502 images, 5 backgrounds, 0 corrupt: 81% ━━━━━━━━━╸── 1502/1836 129.7it/s 9.5s<2.6s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1517 images, 5 backgrounds, 0 corrupt: 82% ━━━━━━━━━╸── 1517/1836 129.7it/s 9.6s<2.5s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1533 images, 5 backgrounds, 0 corrupt: 83% ━━━━━━━━━━── 1533/1836 138.2it/s 9.7s<2.2s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1548 images, 6 backgrounds, 0 corrupt: 84% ━━━━━━━━━━── 1548/1836 139.4it/s 9.8s<2.1s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1564 images, 6 backgrounds, 0 corrupt: 85% ━━━━━━━━━━── 1564/1836 141.9it/s 9.9s<1.9s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1582 images, 6 backgrounds, 0 corrupt: 86% ━━━━━━━━━━── 1582/1836 148.7it/s 10.1s<1.7s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1597 images, 6 backgrounds, 0 corrupt: 86% ━━━━━━━━━━── 1597/1836 143.7it/s 10.2s<1.7s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1610 images, 6 backgrounds, 0 corrupt: 87% ━━━━━━━━━━╸─ 1610/1836 139.4it/s 10.3s<1.6s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1628 images, 6 backgrounds, 0 corrupt: 88% ━━━━━━━━━━╸─ 1628/1836 146.9it/s 10.4s<1.4s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1643 images, 6 backgrounds, 0 corrupt: 89% ━━━━━━━━━━╸─ 1643/1836 146.9it/s 10.5s<1.3s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1657 images, 6 backgrounds, 0 corrupt: 90% ━━━━━━━━━━╸─ 1657/1836 143.2it/s 10.6s<1.2s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1667 images, 6 backgrounds, 0 corrupt: 90% ━━━━━━━━━━╸─ 1667/1836 130.2it/s 10.7s<1.3s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1677 images, 6 backgrounds, 0 corrupt: 91% ━━━━━━━━━━╸─ 1677/1836 107.0it/s 10.9s<1.5s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1699 images, 6 backgrounds, 0 corrupt: 92% ━━━━━━━━━━━─ 1699/1836 140.0it/s 11.0s<1.0s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1717 images, 6 backgrounds, 0 corrupt: 93% ━━━━━━━━━━━─ 1717/1836 146.6it/s 11.1s<0.8s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1733 images, 6 backgrounds, 0 corrupt: 94% ━━━━━━━━━━━─ 1733/1836 138.2it/s 11.2s<0.7s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1755 images, 6 backgrounds, 0 corrupt: 95% ━━━━━━━━━━━─ 1755/1836 158.8it/s 11.3s<0.5s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1776 images, 6 backgrounds, 0 corrupt: 96% ━━━━━━━━━━━╸ 1776/1836 170.1it/s 11.4s<0.4s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1793 images, 6 backgrounds, 0 corrupt: 97% ━━━━━━━━━━━╸ 1793/1836 169.4it/s 11.5s<0.3s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1809 images, 6 backgrounds, 0 corrupt: 98% ━━━━━━━━━━━╸ 1809/1836 165.4it/s 11.6s<0.2s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1830 images, 6 backgrounds, 0 corrupt: 99% ━━━━━━━━━━━╸ 1830/1836 177.4it/s 11.7s<0.0s
+[K[34m[1mtrain: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\train... 1836 images, 6 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 1836/1836 156.1it/s 11.8s
+[34m[1mtrain: [0mNew cache created: C:\tccyolo26\dataset_duas_classes\labels\train.cache
+WARNING [34m[1mval: [0mSlow image access detected (ping: 0.10.0 ms, read: 2.61.2 MB/s, size: 13.9 KB). Use local storage instead of remote/mounted storage for better performance. See https://docs.ultralytics.com/guides/model-training-tips
+
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 18 images, 0 backgrounds, 0 corrupt: 3% ──────────── 18/460 52.9it/s 0.1s<8.4s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 36 images, 0 backgrounds, 0 corrupt: 7% ╸─────────── 36/460 89.3it/s 0.2s<4.7s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 58 images, 0 backgrounds, 0 corrupt: 12% ━╸────────── 58/460 127.0it/s 0.3s<3.2s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 80 images, 0 backgrounds, 0 corrupt: 17% ━━────────── 80/460 146.2it/s 0.4s<2.6s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 101 images, 0 backgrounds, 0 corrupt: 21% ━━╸───────── 101/460 159.5it/s 0.5s<2.3s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 117 images, 0 backgrounds, 0 corrupt: 25% ━━━───────── 117/460 155.1it/s 0.6s<2.2s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 135 images, 0 backgrounds, 0 corrupt: 29% ━━━╸──────── 135/460 157.5it/s 0.8s<2.1s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 152 images, 0 backgrounds, 0 corrupt: 33% ━━━╸──────── 152/460 160.9it/s 0.9s<1.9s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 172 images, 0 backgrounds, 0 corrupt: 37% ━━━━──────── 172/460 165.0it/s 1.0s<1.7s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 194 images, 0 backgrounds, 0 corrupt: 42% ━━━━━─────── 194/460 180.4it/s 1.1s<1.5s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 214 images, 0 backgrounds, 0 corrupt: 46% ━━━━━╸────── 214/460 180.5it/s 1.2s<1.4s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 237 images, 0 backgrounds, 0 corrupt: 51% ━━━━━━────── 237/460 190.1it/s 1.3s<1.2s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 259 images, 0 backgrounds, 0 corrupt: 56% ━━━━━━╸───── 259/460 197.2it/s 1.4s<1.0s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 281 images, 0 backgrounds, 0 corrupt: 61% ━━━━━━━───── 281/460 202.0it/s 1.5s<0.9s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 301 images, 0 backgrounds, 0 corrupt: 65% ━━━━━━━╸──── 301/460 201.2it/s 1.6s<0.8s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 324 images, 0 backgrounds, 0 corrupt: 70% ━━━━━━━━──── 324/460 206.1it/s 1.7s<0.7s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 345 images, 0 backgrounds, 0 corrupt: 75% ━━━━━━━━━─── 345/460 199.0it/s 1.8s<0.6s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 362 images, 0 backgrounds, 0 corrupt: 78% ━━━━━━━━━─── 362/460 184.4it/s 1.9s<0.5s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 383 images, 0 backgrounds, 0 corrupt: 83% ━━━━━━━━━╸── 383/460 192.0it/s 2.0s<0.4s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 405 images, 0 backgrounds, 0 corrupt: 88% ━━━━━━━━━━╸─ 405/460 196.8it/s 2.1s<0.3s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 427 images, 0 backgrounds, 0 corrupt: 92% ━━━━━━━━━━━─ 427/460 199.7it/s 2.2s<0.2s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 449 images, 0 backgrounds, 0 corrupt: 97% ━━━━━━━━━━━╸ 449/460 204.2it/s 2.3s<0.1s
+[K[34m[1mval: [0mScanning C:\tccyolo26\dataset_duas_classes\labels\val... 460 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 460/460 191.8it/s 2.4s
+[34m[1mval: [0mNew cache created: C:\tccyolo26\dataset_duas_classes\labels\val.cache
+[34m[1moptimizer:[0m 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically... 
+[34m[1moptimizer:[0m AdamW(lr=0.001667, momentum=0.9) with parameter groups 114 weight(decay=0.0), 126 weight(decay=0.0005), 126 bias(decay=0.0)
+Plotting labels to C:\tccyolo26\treinos\plastic_organico_yolo26n\labels.jpg... 
+Using 1836 train, 460 val images for fraction=1.0 at imgsz=640
+Using 0 dataloader workers
+Logging results to [1mC:\tccyolo26\treinos\plastic_organico_yolo26n[0m
+Starting training for 50 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss    l1_loss  Instances       Size
+
+[K       1/50         0G      1.082      6.737    0.03399         18        640: 0% ──────────── 0/230  9.4s
+[K       1/50         0G     0.9448      5.883    0.02565         29        640: 0% ──────────── 1/230 22.8s/it 16.2s<1:26:55
+[K       1/50         0G     0.9141      6.053    0.02329         19        640: 0% ──────────── 2/230 15.4s/it 25.0s<58:25
+[K       1/50         0G     0.9636      5.724    0.02118         37        640: 1% ──────────── 3/230 10.3s/it 30.8s<38:53
+[K       1/50         0G     0.9966      5.511    0.01999         40        640: 1% ──────────── 4/230 9.6s/it 39.0s<36:01
+[K       1/50         0G     0.9799      5.342    0.01924         38        640: 2% ──────────── 5/230 9.5s/it 48.4s<35:42
+[K       1/50         0G      1.005      5.286    0.01952         32        640: 2% ──────────── 6/230 8.1s/it 54.4s<30:07
+[K       1/50         0G      1.026      5.135    0.01885         62        640: 3% ──────────── 7/230 8.4s/it 1:04<31:22
+[K       1/50         0G      1.036      5.045    0.01862         47        640: 3% ──────────── 8/230 8.1s/it 1:11<29:58
+[K       1/50         0G      1.076      5.001    0.01887         46        640: 3% ──────────── 9/230 8.0s/it 1:19<29:18
+[K       1/50         0G      1.075      4.935    0.01869         46        640: 4% ╸─────────── 10/230 7.6s/it 1:26<27:50
+[K       1/50         0G      1.094      4.888    0.01853         49        640: 4% ╸─────────── 11/230 7.7s/it 1:34<28:13
+[K       1/50         0G      1.061       4.91    0.01823         26        640: 5% ╸─────────── 12/230 7.9s/it 1:42<28:46
+[K       1/50         0G      1.085      4.868    0.01819         54        640: 5% ╸─────────── 13/230 7.8s/it 1:50<28:10
+[K       1/50         0G      1.081      4.826    0.01766         52        640: 6% ╸─────────── 14/230 7.7s/it 1:57<27:33
+[K       1/50         0G      1.096      4.779    0.01766         64        640: 6% ╸─────────── 15/230 7.4s/it 2:04<26:42
+[K       1/50         0G      1.091      4.731    0.01738         56        640: 6% ╸─────────── 16/230 6.8s/it 2:10<24:13
+[K       1/50         0G      1.078      4.707    0.01717         43        640: 7% ╸─────────── 17/230 6.5s/it 2:16<23:06
+[K       1/50         0G      1.065      4.713    0.01701         31        640: 7% ╸─────────── 18/230 7.2s/it 2:25<25:37
+[K       1/50         0G      1.048        4.7    0.01674         36        640: 8% ╸─────────── 19/230 7.3s/it 2:33<25:40
+[K       1/50         0G      1.053       4.66    0.01648         77        640: 8% ━─────────── 20/230 7.3s/it 2:40<25:36
+[K       1/50         0G      1.052      4.636    0.01627         58        640: 9% ━─────────── 21/230 7.5s/it 2:48<26:16
+[K       1/50         0G      1.051      4.633    0.01617         38        640: 9% ━─────────── 22/230 7.0s/it 2:54<24:22
+[K       1/50         0G      1.066        4.6    0.01595        100        640: 10% ━─────────── 23/230 6.7s/it 3:00<23:01
+[K       1/50         0G       1.08      4.588    0.01576         59        640: 10% ━─────────── 24/230 7.1s/it 3:09<24:26
+[K       1/50         0G      1.086      4.582    0.01557         52        640: 10% ━─────────── 25/230 7.0s/it 3:15<23:47
+[K       1/50         0G      1.077       4.58    0.01546         36        640: 11% ━─────────── 26/230 8.3s/it 3:30<28:04
+[K       1/50         0G      1.069      4.589    0.01539         32        640: 11% ━─────────── 27/230 7.7s/it 3:37<25:54
+[K       1/50         0G       1.07      4.576    0.01552         44        640: 12% ━─────────── 28/230 7.1s/it 3:43<23:47
+[K       1/50         0G      1.073       4.56    0.01552         49        640: 12% ━╸────────── 29/230 6.2s/it 3:47<20:55
+[K       1/50         0G      1.071      4.553    0.01551         39        640: 13% ━╸────────── 30/230 5.9s/it 3:53<19:40
+[K       1/50         0G      1.071      4.544     0.0155         44        640: 13% ━╸────────── 31/230 5.8s/it 3:58<19:16
+[K       1/50         0G       1.06      4.562    0.01541         25        640: 13% ━╸────────── 32/230 5.7s/it 4:04<18:41
+[K       1/50         0G      1.057      4.571    0.01537         29        640: 14% ━╸────────── 33/230 6.0s/it 4:11<19:40
+[K       1/50         0G      1.054      4.572    0.01527         36        640: 14% ━╸────────── 34/230 6.6s/it 4:19<21:36
+[K       1/50         0G       1.05      4.565    0.01526         37        640: 15% ━╸────────── 35/230 7.4s/it 4:30<24:10
+[K       1/50         0G      1.055       4.56    0.01517         48        640: 15% ━╸────────── 36/230 7.4s/it 4:37<23:60
+[K       1/50         0G      1.056      4.549     0.0151         49        640: 16% ━╸────────── 37/230 6.8s/it 4:43<21:59
+[K       1/50         0G       1.05      4.556    0.01504         30        640: 16% ━╸────────── 38/230 6.9s/it 4:50<22:11
+[K       1/50         0G      1.047      4.548    0.01504         36        640: 16% ━━────────── 39/230 6.6s/it 4:56<20:55
+[K       1/50         0G      1.047      4.536      0.015         47        640: 17% ━━────────── 40/230 6.9s/it 5:04<21:59
+[K       1/50         0G      1.045      4.525    0.01488         50        640: 17% ━━────────── 41/230 7.3s/it 5:12<22:60
+[K       1/50         0G      1.049      4.518    0.01492         47        640: 18% ━━────────── 42/230 7.7s/it 5:21<24:11
+[K       1/50         0G      1.051      4.495    0.01481         92        640: 18% ━━────────── 43/230 7.6s/it 5:29<23:49
+[K       1/50         0G      1.055      4.478    0.01473         66        640: 19% ━━────────── 44/230 7.5s/it 5:36<23:19
+[K       1/50         0G       1.05      4.463    0.01469         44        640: 19% ━━────────── 45/230 8.2s/it 5:46<25:23
+[K       1/50         0G       1.05      4.455    0.01472         43        640: 20% ━━────────── 46/230 7.8s/it 5:53<24:00
+[K       1/50         0G      1.052      4.436    0.01472         68        640: 20% ━━────────── 47/230 7.7s/it 6:01<23:24
+[K       1/50         0G      1.055      4.416    0.01464         81        640: 20% ━━╸───────── 48/230 8.7s/it 6:13<26:22
+[K       1/50         0G      1.057      4.412    0.01469         40        640: 21% ━━╸───────── 49/230 8.5s/it 6:21<25:35
+[K       1/50         0G      1.062      4.393    0.01468         73        640: 21% ━━╸───────── 50/230 7.8s/it 6:28<23:30
+[K       1/50         0G      1.067      4.375    0.01461        117        640: 22% ━━╸───────── 51/230 8.1s/it 6:37<24:04
+[K       1/50         0G      1.065      4.371     0.0146         36        640: 22% ━━╸───────── 52/230 8.1s/it 6:45<23:58
+[K       1/50         0G      1.068      4.351    0.01452        110        640: 23% ━━╸───────── 53/230 8.7s/it 6:55<25:34
+[K       1/50         0G      1.074      4.345    0.01456         54        640: 23% ━━╸───────── 54/230 8.2s/it 7:03<24:06
+[K       1/50         0G      1.078      4.335    0.01457         58        640: 23% ━━╸───────── 55/230 7.6s/it 7:09<22:07
+[K       1/50         0G      1.079      4.325    0.01456         51        640: 24% ━━╸───────── 56/230 7.0s/it 7:15<20:15
+[K       1/50         0G      1.082      4.308    0.01453        117        640: 24% ━━╸───────── 57/230 7.0s/it 7:22<20:17
+[K       1/50         0G      1.085      4.301    0.01454         51        640: 25% ━━━───────── 58/230 7.2s/it 7:30<20:35k

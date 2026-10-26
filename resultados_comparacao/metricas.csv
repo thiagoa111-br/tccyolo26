@@ -1,0 +1,3 @@
+modelo,precision,recall,mAP50,mAP50-95,inferencia_ms,parametros_M,tamanho_pt_MB
+YOLO26n,0.0,0.0,0.0,0.0,126.87308576083959,2.50458,5.364933
+YOLOv8n,0.0,0.0,0.0,0.0,137.36887366404872,3.011238,6.22737

@@ -1,0 +1,30 @@
+{
+  "summary": {
+    "train": {
+      "images": 1836,
+      "labels": 1836,
+      "instances": {
+        "1": 3343,
+        "0": 2001
+      },
+      "empty_labels": 6
+    },
+    "val": {
+      "images": 460,
+      "labels": 460,
+      "instances": {
+        "1": 724,
+        "0": 487
+      },
+      "empty_labels": 0
+    }
+  },
+  "errors": [],
+  "cross_split_identical_images": 0,
+  "yaml_match": true,
+  "class_mapping": {
+    "0": "plastic",
+    "1": "organico"
+  },
+  "source_remapping_verified": 2296
+}
